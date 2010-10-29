@@ -5,11 +5,10 @@
 
 package Controlador;
 
+import Modelo.Clases.Clientes;
 import Modelo.Queries.BusquedaClientes;
-import Modelo.Queries.EliminarCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,20 +19,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sands
  */
-public class eliminarCliente extends HttpServlet {
+public class redireccionModificar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        EliminarCliente mov = new EliminarCliente();
-        int id =Integer.parseInt(req.getParameter("ID"));
-        int modificado = mov.eliminar(id);
-        RequestDispatcher view = null;
-        if(modificado > 0){
-            view = req.getRequestDispatcher("index.html");
-            view.forward(req, resp);
-        }else{
-            view = req.getRequestDispatcher("Error.jsp");
-            view.forward(req, resp);
-        }
+        int id =Integer.parseInt(req.getParameter("clienteSeleccionado"));
+        BusquedaClientes mov = new BusquedaClientes();
+        Clientes elCliente = mov.obtenerCliente(id);
+        req.setAttribute("Cliente", elCliente);
+        RequestDispatcher view = req.getRequestDispatcher("modificacion.jsp");
+        view.forward(req, resp);
     }
+    
 }

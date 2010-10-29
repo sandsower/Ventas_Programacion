@@ -8,6 +8,18 @@
         <servlet-name>eliminarClientes</servlet-name>
         <servlet-class>Controlador.eliminarCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>agregarCliente</servlet-name>
+        <servlet-class>Controlador.agregarCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>redireccionModificar</servlet-name>
+        <servlet-class>Controlador.redireccionModificar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>modificarCliente</servlet-name>
+        <servlet-class>Controlador.modificarCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>obtenerClientesE</servlet-name>
         <url-pattern>/obtenerClientesE.do</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>eliminarClientes</servlet-name>
         <url-pattern>/eliminarCliente.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarCliente</servlet-name>
+        <url-pattern>/agregarCliente.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>redireccionModificar</servlet-name>
+        <url-pattern>/redireccionModificar.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>modificarCliente</servlet-name>
+        <url-pattern>/modificarCliente.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

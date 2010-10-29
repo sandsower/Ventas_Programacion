@@ -35,6 +35,25 @@ public class BusquedaClientes {
         }
         return null;
     }
+    
+    public Clientes obtenerCliente(int id) {
+        Connection con = connect.getConnect();
+        ResultSet rs = null;
+        Statement stmt = null;
+        Clientes elCliente = null;
+        try{
+            String query = "SELECT * FROM clientes WHERE Id_Cliente="+id;
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                elCliente = new Clientes(rs.getInt("Id_Cliente"), rs.getString("Nombre"), rs.getString("Direccion") , rs.getInt("Fax"), rs.getInt("Saldo"));
+            }
+            return elCliente;
+        }catch(Exception ex){
+            System.out.println("Se presento la excepcion:"+ex.toString());
+        }
+        return null;
+    }
 //     public int agregarPersona(Persona p){
 //        try {
 //
