@@ -16,7 +16,7 @@
     </head>
     <body>
         <h1>Seleccione el cliente que desee eliminar</h1>
-        <form action="eliminarClientes.do" method="post">
+        <form action="eliminarCliente.do" method="post">
             <table>
                 <tr>
                     <td>
@@ -32,7 +32,7 @@
                         Saldo
                     </td>
                     <td>
-                        
+                        ¿Eliminar?
                     </td>
                 </tr>
                 <c:forEach var="cliente" items="${Clientes}">
@@ -50,7 +50,7 @@
                             ${cliente.saldo}
                         </td>
                         <td>
-                            <input type="button" id="${cliente.idClientes}" value="Eliminar"/>
+                            <input name="ID" type="submit" value="${cliente.idClientes}"/>
                         </td>
                     </tr>
                 </c:forEach>

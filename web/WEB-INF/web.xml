@@ -4,9 +4,17 @@
         <servlet-name>obtenerClientesE</servlet-name>
         <servlet-class>Controlador.ObtenerClientesE</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>eliminarClientes</servlet-name>
+        <servlet-class>Controlador.eliminarCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>obtenerClientesE</servlet-name>
         <url-pattern>/obtenerClientesE.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarClientes</servlet-name>
+        <url-pattern>/eliminarCliente.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

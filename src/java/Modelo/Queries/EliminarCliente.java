@@ -14,7 +14,7 @@ import java.sql.*;
 public class EliminarCliente {
      private ConexionBD connect = new ConexionBD();
 
-    public int eliminarCliente(int id) {
+    public int eliminar(int id) {
         Connection con = connect.getConnect();
         ResultSet rs = null;
         Statement stmt = null;

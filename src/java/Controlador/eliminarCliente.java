@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Queries.BusquedaClientes;
+import Modelo.Queries.EliminarCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -23,10 +24,16 @@ public class eliminarCliente extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BusquedaClientes clientes = new BusquedaClientes();
-        ArrayList lista = clientes.obtenerClientes();
-        req.setAttribute("Clientes", lista);
-        RequestDispatcher view = req.getRequestDispatcher("EliminarClientes.jsp");
-        view.forward(req, resp);
+        EliminarCliente mov = new EliminarCliente();
+        int id =Integer.parseInt(req.getParameter("ID"));
+        int modificado = mov.eliminar(id);
+        RequestDispatcher view = null;
+        if(modificado > 0){
+            view = req.getRequestDispatcher("obtenerClientesE.do");
+            view.forward(req, resp);
+        }else{
+            view = req.getRequestDispatcher("Error.jsp");
+            view.forward(req, resp);
+        }
     }
 }
