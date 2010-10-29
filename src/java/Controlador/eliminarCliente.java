@@ -26,7 +26,7 @@ public class eliminarCliente extends HttpServlet {
         BusquedaClientes clientes = new BusquedaClientes();
         ArrayList lista = clientes.obtenerClientes();
         req.setAttribute("Clientes", lista);
-        RequestDispatcher view = req.getRequestDispatcher("EliminarClientes");
+        RequestDispatcher view = req.getRequestDispatcher("EliminarClientes.jsp");
         view.forward(req, resp);
     }
 }
