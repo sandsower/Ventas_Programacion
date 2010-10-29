@@ -31,6 +31,9 @@
                     <td>
                         Saldo
                     </td>
+                    <td>
+                        
+                    </td>
                 </tr>
                 <c:forEach var="cliente" items="${Clientes}">
                     <tr>
@@ -44,11 +47,15 @@
                             ${cliente.fax}
                         </td>
                         <td>
-                            ${cliente.telefono}
+                            ${cliente.saldo}
+                        </td>
+                        <td>
+                            <input type="button" id="${cliente.idClientes}" value="Eliminar"/>
                         </td>
                     </tr>
                 </c:forEach>
             </table>
         </form>
+        <h3><a href="index.html">Regresar</a></h3>
     </body>
 </html>

@@ -22,7 +22,7 @@ public class ConexionBD {
     public final void conectarBD(String username, String password){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/javaprueba?user="+username+"&password="+password;
+            String connectionUrl = "jdbc:mysql://localhost/ventas?user="+username+"&password="+password;
             Connection con = DriverManager.getConnection(connectionUrl);
             this.setConnect(con);
         }
