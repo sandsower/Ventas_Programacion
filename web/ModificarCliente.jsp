@@ -17,9 +17,9 @@
     <body>
         <h1>Selecciona el cliente a modificar</h1>
         <form action="redireccionModificar.do" method="post">
-            <select id="clienteSeleccionado">
+            <select name="clienteSeleccionado">
                 <c:forEach var="cliente" items="${Clientes}">
-                    <option id="${cliente.idClientes}">${cliente.nombre}</option>
+                    <option value="${cliente.idClientes}">${cliente.nombre}</option>
                 </c:forEach>
             </select>
             <input type="submit" value="Aceptar"/>

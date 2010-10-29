@@ -20,6 +20,10 @@
         <servlet-name>modificarCliente</servlet-name>
         <servlet-class>Controlador.modificarCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>obtenerClientesM</servlet-name>
+        <servlet-class>Controlador.ObtenerClientesM</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>obtenerClientesE</servlet-name>
         <url-pattern>/obtenerClientesE.do</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>modificarCliente</servlet-name>
         <url-pattern>/modificarCliente.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>obtenerClientesM</servlet-name>
+        <url-pattern>/ObtenerClientesM.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

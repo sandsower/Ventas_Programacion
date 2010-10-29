@@ -24,7 +24,7 @@ public class modificarCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ModificarCliente mov = new ModificarCliente();
-        int modificado = mov.updateCliente(new Clientes(0, req.getParameter("Nombre"), req.getParameter("Direccion")
+        int modificado = mov.updateCliente(new Clientes(Integer.parseInt(req.getParameter("ID")), req.getParameter("Nombre"), req.getParameter("Direccion")
                 , Integer.parseInt(req.getParameter("Fax")), Integer.parseInt(req.getParameter("Saldo"))));
         RequestDispatcher view = null;
         if(modificado > 0){

@@ -15,11 +15,12 @@
     </head>
     <body>
         <form action="modificarCliente.do" method="post">
-            Nombre:<input type="text" name="Nombre" value="${Cliente.nombre}"/>
-            Direccion:<input type="text" name="Direccion" value="${Cliente.direccion}"/>
-            Fax:<input type="text" name="Fax" value="${Cliente.fax}"/>
-            Saldo:<input type="text" name="Saldo" value="${Cliente.saldo}"/>
-            <input type="submit" value="Insertar"/>
+            <input type="hidden" value="${Cliente.idClientes}" name="ID"/><br>
+            Nombre:<input type="text" name="Nombre" value="${Cliente.nombre}"/><br>
+            Direccion:<input type="text" name="Direccion" value="${Cliente.direccion}"/><br>
+            Fax:<input type="text" name="Fax" value="${Cliente.fax}"/><br>
+            Saldo:<input type="text" name="Saldo" value="${Cliente.saldo}"/><br>
+            <input type="submit" value="Modificar"/>
         </form>
     </body>
 </html>

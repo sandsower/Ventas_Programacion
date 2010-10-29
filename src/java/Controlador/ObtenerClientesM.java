@@ -26,7 +26,7 @@ public class ObtenerClientesM extends HttpServlet {
         BusquedaClientes clientes = new BusquedaClientes();
         ArrayList lista = clientes.obtenerClientes();
         req.setAttribute("Clientes", lista);
-        RequestDispatcher view = req.getRequestDispatcher("ModificarClientes.jsp");
+        RequestDispatcher view = req.getRequestDispatcher("ModificarCliente.jsp");
         view.forward(req, resp);
     }
 }

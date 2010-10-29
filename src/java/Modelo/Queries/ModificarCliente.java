@@ -20,13 +20,14 @@ public class ModificarCliente {
             ConexionBD connect = new ConexionBD();
             Connection con = connect.getConnect();
             PreparedStatement pstmt = (PreparedStatement) con.prepareStatement
-                    ("UPDATE clientes SET Nombre=?,Domicilio=?,Fax=?,Saldo=? WHERE Id_Cliente=?");
+                    ("UPDATE clientes SET clientes.Nombre=?,clientes.Domicilio=?,"
+                    + "clientes.Fax=?,clientes.Saldo=? WHERE clientes.Id_Cliente=?");
             pstmt.setString(1, c.getNombre());
             pstmt.setString(2, c.getDireccion());
             pstmt.setInt(3, c.getFax());
             pstmt.setInt(4, c.getSaldo());
             pstmt.setInt(5, c.getIdClientes());
-            int  rows_updated = pstmt.executeUpdate();
+            int rows_updated = pstmt.executeUpdate();
             con.close();
             return rows_updated;
         } catch (SQLException ex) {
